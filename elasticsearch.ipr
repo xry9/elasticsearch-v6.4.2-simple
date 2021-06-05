@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac"/>
+    <resourceExtensions>
+      <entry name=".+\.(properties|xml|html|dtd|tld)"/>
+      <entry name=".+\.(gif|png|jpeg|jpg)"/>
+    </resourceExtensions>
+    <wildcardResourcePatterns>
+      <entry name="!?*.class"/>
+      <entry name="!?*.scala"/>
+      <entry name="!?*.groovy"/>
+      <entry name="!?*.java"/>
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true"/>
+    <bytecodeTargetLevel target="1.8">
+      <module name="rest" target="1.7"/>
+      <module name="sniffer" target="1.7"/>
+      <module name="client-test" target="1.7"/>
+      <module name="java-version-checker" target="1.7"/>
+    </bytecodeTargetLevel>
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright/>
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false"/>
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false"/>
+  <component name="GradleUISettings">
+    <setting name="root"/>
+  </component>
+  <component name="GradleUISettings2">
+    <setting name="root"/>
+  </component>
+  <component name="IdProvider" IDEtalkID="11DA1DB66DD62DDA1ED602B7079FE97C"/>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY"/>
+    <option name="OPTION_SCOPE" value="protected"/>
+    <option name="OPTION_HIERARCHY" value="true"/>
+    <option name="OPTION_NAVIGATOR" value="true"/>
+    <option name="OPTION_INDEX" value="true"/>
+    <option name="OPTION_SEPARATE_INDEX" value="true"/>
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false"/>
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true"/>
+    <option name="OPTION_DEPRECATED_LIST" value="true"/>
+    <option name="OTHER_OPTIONS" value=""/>
+    <option name="HEAP_SIZE"/>
+    <option name="LOCALE"/>
+    <option name="OPEN_IN_BROWSER" value="true"/>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch.iml" filepath="$PROJECT_DIR$/elasticsearch.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/benchmarks/benchmarks.iml" filepath="$PROJECT_DIR$/benchmarks/benchmarks.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/buildSrc/build-tools.iml" filepath="$PROJECT_DIR$/buildSrc/build-tools.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/distribution.iml" filepath="$PROJECT_DIR$/distribution/distribution.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/docs/elasticsearch-docs.iml" filepath="$PROJECT_DIR$/docs/elasticsearch-docs.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/example-plugins.iml" filepath="$PROJECT_DIR$/plugins/examples/example-plugins.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/libs.iml" filepath="$PROJECT_DIR$/libs/libs.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/modules.iml" filepath="$PROJECT_DIR$/modules/modules.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/plugins.iml" filepath="$PROJECT_DIR$/plugins/plugins.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/elasticsearch-qa.iml" filepath="$PROJECT_DIR$/qa/elasticsearch-qa.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/rest-api-spec/rest-api-spec.iml" filepath="$PROJECT_DIR$/rest-api-spec/rest-api-spec.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/elasticsearch-test.iml" filepath="$PROJECT_DIR$/test/elasticsearch-test.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/x-pack.iml" filepath="$PROJECT_DIR$/x-pack/x-pack.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/benchmark/benchmark.iml" filepath="$PROJECT_DIR$/client/benchmark/benchmark.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/client-benchmark-noop-api-plugin/client-benchmark-noop-api-plugin.iml" filepath="$PROJECT_DIR$/client/client-benchmark-noop-api-plugin/client-benchmark-noop-api-plugin.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/rest/rest.iml" filepath="$PROJECT_DIR$/client/rest/rest.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/rest-high-level/rest-high-level.iml" filepath="$PROJECT_DIR$/client/rest-high-level/rest-high-level.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/sniffer/sniffer.iml" filepath="$PROJECT_DIR$/client/sniffer/sniffer.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/test/client-test.iml" filepath="$PROJECT_DIR$/client/test/client-test.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/client/transport/transport.iml" filepath="$PROJECT_DIR$/client/transport/transport.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/archives.iml" filepath="$PROJECT_DIR$/distribution/archives/archives.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/bwc/bwc.iml" filepath="$PROJECT_DIR$/distribution/bwc/bwc.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/packages/packages.iml" filepath="$PROJECT_DIR$/distribution/packages/packages.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/tools/tools.iml" filepath="$PROJECT_DIR$/distribution/tools/tools.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/custom-settings/custom-settings.iml" filepath="$PROJECT_DIR$/plugins/examples/custom-settings/custom-settings.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/painless-whitelist/painless-whitelist.iml" filepath="$PROJECT_DIR$/plugins/examples/painless-whitelist/painless-whitelist.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/rescore/rescore.iml" filepath="$PROJECT_DIR$/plugins/examples/rescore/rescore.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/rest-handler/rest-handler.iml" filepath="$PROJECT_DIR$/plugins/examples/rest-handler/rest-handler.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/examples/script-expert-scoring/script-expert-scoring.iml" filepath="$PROJECT_DIR$/plugins/examples/script-expert-scoring/script-expert-scoring.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/cli/libs-cli.iml" filepath="$PROJECT_DIR$/libs/cli/libs-cli.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/core/libs-core.iml" filepath="$PROJECT_DIR$/libs/core/libs-core.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/grok/grok.iml" filepath="$PROJECT_DIR$/libs/grok/grok.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/plugin-classloader/plugin-classloader.iml" filepath="$PROJECT_DIR$/libs/plugin-classloader/plugin-classloader.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/secure-sm/secure-sm.iml" filepath="$PROJECT_DIR$/libs/secure-sm/secure-sm.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/libs/x-content/x-content.iml" filepath="$PROJECT_DIR$/libs/x-content/x-content.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/aggs-matrix-stats/aggs-matrix-stats.iml" filepath="$PROJECT_DIR$/modules/aggs-matrix-stats/aggs-matrix-stats.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/analysis-common/analysis-common.iml" filepath="$PROJECT_DIR$/modules/analysis-common/analysis-common.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/ingest-common/ingest-common.iml" filepath="$PROJECT_DIR$/modules/ingest-common/ingest-common.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/lang-expression/lang-expression.iml" filepath="$PROJECT_DIR$/modules/lang-expression/lang-expression.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/lang-mustache/lang-mustache.iml" filepath="$PROJECT_DIR$/modules/lang-mustache/lang-mustache.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/lang-painless/lang-painless.iml" filepath="$PROJECT_DIR$/modules/lang-painless/lang-painless.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/mapper-extras/mapper-extras.iml" filepath="$PROJECT_DIR$/modules/mapper-extras/mapper-extras.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/parent-join/parent-join.iml" filepath="$PROJECT_DIR$/modules/parent-join/parent-join.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/percolator/percolator.iml" filepath="$PROJECT_DIR$/modules/percolator/percolator.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/rank-eval/rank-eval.iml" filepath="$PROJECT_DIR$/modules/rank-eval/rank-eval.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/reindex/reindex.iml" filepath="$PROJECT_DIR$/modules/reindex/reindex.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/repository-url/repository-url.iml" filepath="$PROJECT_DIR$/modules/repository-url/repository-url.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/transport-netty4/transport-netty4.iml" filepath="$PROJECT_DIR$/modules/transport-netty4/transport-netty4.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/tribe/tribe.iml" filepath="$PROJECT_DIR$/modules/tribe/tribe.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-icu/analysis-icu.iml" filepath="$PROJECT_DIR$/plugins/analysis-icu/analysis-icu.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-kuromoji/analysis-kuromoji.iml" filepath="$PROJECT_DIR$/plugins/analysis-kuromoji/analysis-kuromoji.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-nori/analysis-nori.iml" filepath="$PROJECT_DIR$/plugins/analysis-nori/analysis-nori.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-phonetic/analysis-phonetic.iml" filepath="$PROJECT_DIR$/plugins/analysis-phonetic/analysis-phonetic.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-smartcn/analysis-smartcn.iml" filepath="$PROJECT_DIR$/plugins/analysis-smartcn/analysis-smartcn.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-stempel/analysis-stempel.iml" filepath="$PROJECT_DIR$/plugins/analysis-stempel/analysis-stempel.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/analysis-ukrainian/analysis-ukrainian.iml" filepath="$PROJECT_DIR$/plugins/analysis-ukrainian/analysis-ukrainian.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-azure-classic/discovery-azure-classic.iml" filepath="$PROJECT_DIR$/plugins/discovery-azure-classic/discovery-azure-classic.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-ec2/discovery-ec2.iml" filepath="$PROJECT_DIR$/plugins/discovery-ec2/discovery-ec2.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-file/discovery-file.iml" filepath="$PROJECT_DIR$/plugins/discovery-file/discovery-file.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-gce/discovery-gce.iml" filepath="$PROJECT_DIR$/plugins/discovery-gce/discovery-gce.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/ingest-attachment/ingest-attachment.iml" filepath="$PROJECT_DIR$/plugins/ingest-attachment/ingest-attachment.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/ingest-geoip/ingest-geoip.iml" filepath="$PROJECT_DIR$/plugins/ingest-geoip/ingest-geoip.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/ingest-user-agent/ingest-user-agent.iml" filepath="$PROJECT_DIR$/plugins/ingest-user-agent/ingest-user-agent.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/mapper-murmur3/mapper-murmur3.iml" filepath="$PROJECT_DIR$/plugins/mapper-murmur3/mapper-murmur3.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/mapper-size/mapper-size.iml" filepath="$PROJECT_DIR$/plugins/mapper-size/mapper-size.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-azure/repository-azure.iml" filepath="$PROJECT_DIR$/plugins/repository-azure/repository-azure.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-gcs/repository-gcs.iml" filepath="$PROJECT_DIR$/plugins/repository-gcs/repository-gcs.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-hdfs/repository-hdfs.iml" filepath="$PROJECT_DIR$/plugins/repository-hdfs/repository-hdfs.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-s3/repository-s3.iml" filepath="$PROJECT_DIR$/plugins/repository-s3/repository-s3.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/store-smb/store-smb.iml" filepath="$PROJECT_DIR$/plugins/store-smb/store-smb.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/ccs-unavailable-clusters/ccs-unavailable-clusters.iml" filepath="$PROJECT_DIR$/qa/ccs-unavailable-clusters/ccs-unavailable-clusters.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/die-with-dignity/die-with-dignity.iml" filepath="$PROJECT_DIR$/qa/die-with-dignity/die-with-dignity.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/evil-tests/elasticsearch-qa-evil-tests.iml" filepath="$PROJECT_DIR$/qa/evil-tests/elasticsearch-qa-evil-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/full-cluster-restart/elasticsearch-qa-full-cluster-restart.iml" filepath="$PROJECT_DIR$/qa/full-cluster-restart/elasticsearch-qa-full-cluster-restart.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/mixed-cluster/mixed-cluster.iml" filepath="$PROJECT_DIR$/qa/mixed-cluster/mixed-cluster.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/multi-cluster-search/multi-cluster-search.iml" filepath="$PROJECT_DIR$/qa/multi-cluster-search/multi-cluster-search.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/no-bootstrap-tests/no-bootstrap-tests.iml" filepath="$PROJECT_DIR$/qa/no-bootstrap-tests/no-bootstrap-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/rolling-upgrade/elasticsearch-qa-rolling-upgrade.iml" filepath="$PROJECT_DIR$/qa/rolling-upgrade/elasticsearch-qa-rolling-upgrade.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-client/smoke-test-client.iml" filepath="$PROJECT_DIR$/qa/smoke-test-client/smoke-test-client.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-http/smoke-test-http.iml" filepath="$PROJECT_DIR$/qa/smoke-test-http/smoke-test-http.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-ingest-disabled/smoke-test-ingest-disabled.iml" filepath="$PROJECT_DIR$/qa/smoke-test-ingest-disabled/smoke-test-ingest-disabled.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-ingest-with-all-dependencies/smoke-test-ingest-with-all-dependencies.iml" filepath="$PROJECT_DIR$/qa/smoke-test-ingest-with-all-dependencies/smoke-test-ingest-with-all-dependencies.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-multinode/smoke-test-multinode.iml" filepath="$PROJECT_DIR$/qa/smoke-test-multinode/smoke-test-multinode.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-plugins/elasticsearch-qa-smoke-test-plugins.iml" filepath="$PROJECT_DIR$/qa/smoke-test-plugins/elasticsearch-qa-smoke-test-plugins.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/smoke-test-tribe-node/smoke-test-tribe-node.iml" filepath="$PROJECT_DIR$/qa/smoke-test-tribe-node/smoke-test-tribe-node.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/vagrant/elasticsearch-qa-vagrant.iml" filepath="$PROJECT_DIR$/qa/vagrant/elasticsearch-qa-vagrant.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/verify-version-constants/verify-version-constants.iml" filepath="$PROJECT_DIR$/qa/verify-version-constants/verify-version-constants.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/qa/wildfly/wildfly.iml" filepath="$PROJECT_DIR$/qa/wildfly/wildfly.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/server/cli/server-cli.iml" filepath="$PROJECT_DIR$/server/cli/server-cli.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/fixtures/fixtures.iml" filepath="$PROJECT_DIR$/test/fixtures/fixtures.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/framework/framework.iml" filepath="$PROJECT_DIR$/test/framework/framework.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/logger-usage/logger-usage.iml" filepath="$PROJECT_DIR$/test/logger-usage/logger-usage.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/docs/x-pack-docs.iml" filepath="$PROJECT_DIR$/x-pack/docs/x-pack-docs.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/license-tools/license-tools.iml" filepath="$PROJECT_DIR$/x-pack/license-tools/license-tools.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/plugin.iml" filepath="$PROJECT_DIR$/x-pack/plugin/plugin.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/protocol/protocol.iml" filepath="$PROJECT_DIR$/x-pack/protocol/protocol.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/x-pack-qa.iml" filepath="$PROJECT_DIR$/x-pack/qa/x-pack-qa.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/test/x-pack-test.iml" filepath="$PROJECT_DIR$/x-pack/test/x-pack-test.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/transport-client/transport-client.iml" filepath="$PROJECT_DIR$/x-pack/transport-client/transport-client.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/integ-test-zip/integ-test-zip.iml" filepath="$PROJECT_DIR$/distribution/archives/integ-test-zip/integ-test-zip.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/oss-tar/oss-tar.iml" filepath="$PROJECT_DIR$/distribution/archives/oss-tar/oss-tar.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/oss-zip/oss-zip.iml" filepath="$PROJECT_DIR$/distribution/archives/oss-zip/oss-zip.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/tar/tar.iml" filepath="$PROJECT_DIR$/distribution/archives/tar/tar.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/archives/zip/zip.iml" filepath="$PROJECT_DIR$/distribution/archives/zip/zip.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/bwc/maintenance-bugfix-snapshot/maintenance-bugfix-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/maintenance-bugfix-snapshot/maintenance-bugfix-snapshot.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/bwc/next-bugfix-snapshot/next-bugfix-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/next-bugfix-snapshot/next-bugfix-snapshot.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/bwc/next-minor-snapshot/next-minor-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/next-minor-snapshot/next-minor-snapshot.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/bwc/staged-minor-snapshot/staged-minor-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/staged-minor-snapshot/staged-minor-snapshot.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/packages/deb/deb.iml" filepath="$PROJECT_DIR$/distribution/packages/deb/deb.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/packages/oss-deb/oss-deb.iml" filepath="$PROJECT_DIR$/distribution/packages/oss-deb/oss-deb.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/packages/oss-rpm/oss-rpm.iml" filepath="$PROJECT_DIR$/distribution/packages/oss-rpm/oss-rpm.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/packages/rpm/rpm.iml" filepath="$PROJECT_DIR$/distribution/packages/rpm/rpm.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/tools/java-version-checker/java-version-checker.iml" filepath="$PROJECT_DIR$/distribution/tools/java-version-checker/java-version-checker.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/tools/launchers/launchers.iml" filepath="$PROJECT_DIR$/distribution/tools/launchers/launchers.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/distribution/tools/plugin-cli/plugin-cli.iml" filepath="$PROJECT_DIR$/distribution/tools/plugin-cli/plugin-cli.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/modules/lang-painless/spi/spi.iml" filepath="$PROJECT_DIR$/modules/lang-painless/spi/spi.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-ec2/qa/discovery-ec2-qa.iml" filepath="$PROJECT_DIR$/plugins/discovery-ec2/qa/discovery-ec2-qa.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-azure/qa/repository-azure-qa.iml" filepath="$PROJECT_DIR$/plugins/repository-azure/qa/repository-azure-qa.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-gcs/qa/repository-gcs-qa.iml" filepath="$PROJECT_DIR$/plugins/repository-gcs/qa/repository-gcs-qa.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/fixtures/hdfs-fixture/hdfs-fixture.iml" filepath="$PROJECT_DIR$/test/fixtures/hdfs-fixture/hdfs-fixture.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/fixtures/krb5kdc-fixture/krb5kdc-fixture.iml" filepath="$PROJECT_DIR$/test/fixtures/krb5kdc-fixture/krb5kdc-fixture.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/test/fixtures/old-elasticsearch/old-elasticsearch.iml" filepath="$PROJECT_DIR$/test/fixtures/old-elasticsearch/old-elasticsearch.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/core/plugin-core.iml" filepath="$PROJECT_DIR$/x-pack/plugin/core/plugin-core.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/deprecation/deprecation.iml" filepath="$PROJECT_DIR$/x-pack/plugin/deprecation/deprecation.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/graph/graph.iml" filepath="$PROJECT_DIR$/x-pack/plugin/graph/graph.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/logstash/logstash.iml" filepath="$PROJECT_DIR$/x-pack/plugin/logstash/logstash.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/ml/ml.iml" filepath="$PROJECT_DIR$/x-pack/plugin/ml/ml.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/monitoring/monitoring.iml" filepath="$PROJECT_DIR$/x-pack/plugin/monitoring/monitoring.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/rollup/rollup.iml" filepath="$PROJECT_DIR$/x-pack/plugin/rollup/rollup.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/security/plugin-security.iml" filepath="$PROJECT_DIR$/x-pack/plugin/security/plugin-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/plugin-sql.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/plugin-sql.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/upgrade/upgrade.iml" filepath="$PROJECT_DIR$/x-pack/plugin/upgrade/upgrade.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/watcher/watcher.iml" filepath="$PROJECT_DIR$/x-pack/plugin/watcher/watcher.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/audit-tests/audit-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/audit-tests/audit-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/core-rest-tests-with-security/core-rest-tests-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/core-rest-tests-with-security/core-rest-tests-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/evil-tests/x-pack-qa-evil-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/evil-tests/x-pack-qa-evil-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/full-cluster-restart/x-pack-qa-full-cluster-restart.iml" filepath="$PROJECT_DIR$/x-pack/qa/full-cluster-restart/x-pack-qa-full-cluster-restart.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/kerberos-tests/kerberos-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/kerberos-tests/kerberos-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/ml-basic-multi-node/ml-basic-multi-node.iml" filepath="$PROJECT_DIR$/x-pack/qa/ml-basic-multi-node/ml-basic-multi-node.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/ml-disabled/ml-disabled.iml" filepath="$PROJECT_DIR$/x-pack/qa/ml-disabled/ml-disabled.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/ml-native-multi-node-tests/ml-native-multi-node-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/ml-native-multi-node-tests/ml-native-multi-node-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/ml-no-bootstrap-tests/ml-no-bootstrap-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/ml-no-bootstrap-tests/ml-no-bootstrap-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/ml-single-node-tests/ml-single-node-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/ml-single-node-tests/ml-single-node-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/multi-cluster-search-security/multi-cluster-search-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/multi-cluster-search-security/multi-cluster-search-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/multi-node/multi-node.iml" filepath="$PROJECT_DIR$/x-pack/qa/multi-node/multi-node.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/openldap-tests/openldap-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/openldap-tests/openldap-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/reindex-tests-with-security/reindex-tests-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/reindex-tests-with-security/reindex-tests-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/rolling-upgrade/x-pack-qa-rolling-upgrade.iml" filepath="$PROJECT_DIR$/x-pack/qa/rolling-upgrade/x-pack-qa-rolling-upgrade.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/saml-idp-tests/saml-idp-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/saml-idp-tests/saml-idp-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/security-client-tests/security-client-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/security-client-tests/security-client-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/security-example-spi-extension/security-example-spi-extension.iml" filepath="$PROJECT_DIR$/x-pack/qa/security-example-spi-extension/security-example-spi-extension.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/security-migrate-tests/security-migrate-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/security-migrate-tests/security-migrate-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/security-setup-password-tests/security-setup-password-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/security-setup-password-tests/security-setup-password-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/security-tools-tests/security-tools-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/security-tools-tests/security-tools-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-graph-with-security/smoke-test-graph-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-graph-with-security/smoke-test-graph-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-ml-with-security/smoke-test-ml-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-ml-with-security/smoke-test-ml-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-monitoring-with-watcher/smoke-test-monitoring-with-watcher.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-monitoring-with-watcher/smoke-test-monitoring-with-watcher.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-plugins/x-pack-qa-smoke-test-plugins.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-plugins/x-pack-qa-smoke-test-plugins.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-plugins-ssl/smoke-test-plugins-ssl.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-plugins-ssl/smoke-test-plugins-ssl.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-security-with-mustache/smoke-test-security-with-mustache.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-security-with-mustache/smoke-test-security-with-mustache.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-watcher/smoke-test-watcher.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-watcher/smoke-test-watcher.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/smoke-test-watcher-with-security/smoke-test-watcher-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/smoke-test-watcher-with-security/smoke-test-watcher-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/qa-sql.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/qa-sql.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/third-party.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/third-party.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/transport-client-tests/transport-client-tests.iml" filepath="$PROJECT_DIR$/x-pack/qa/transport-client-tests/transport-client-tests.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/tribe-tests-with-license/tribe-tests-with-license.iml" filepath="$PROJECT_DIR$/x-pack/qa/tribe-tests-with-license/tribe-tests-with-license.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/tribe-tests-with-security/tribe-tests-with-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/tribe-tests-with-security/tribe-tests-with-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/vagrant/x-pack-qa-vagrant.iml" filepath="$PROJECT_DIR$/x-pack/qa/vagrant/x-pack-qa-vagrant.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/test/feature-aware/feature-aware.iml" filepath="$PROJECT_DIR$/x-pack/test/feature-aware/feature-aware.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/test/idp-fixture/idp-fixture.iml" filepath="$PROJECT_DIR$/x-pack/test/idp-fixture/idp-fixture.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/test/smb-fixture/smb-fixture.iml" filepath="$PROJECT_DIR$/x-pack/test/smb-fixture/smb-fixture.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/discovery-ec2/qa/amazon-ec2/amazon-ec2.iml" filepath="$PROJECT_DIR$/plugins/discovery-ec2/qa/amazon-ec2/amazon-ec2.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-azure/qa/microsoft-azure-storage/microsoft-azure-storage.iml" filepath="$PROJECT_DIR$/plugins/repository-azure/qa/microsoft-azure-storage/microsoft-azure-storage.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/plugins/repository-gcs/qa/google-cloud-storage/google-cloud-storage.iml" filepath="$PROJECT_DIR$/plugins/repository-gcs/qa/google-cloud-storage/google-cloud-storage.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/ml/cpp-snapshot/cpp-snapshot.iml" filepath="$PROJECT_DIR$/x-pack/plugin/ml/cpp-snapshot/cpp-snapshot.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/security/cli/security-cli.iml" filepath="$PROJECT_DIR$/x-pack/plugin/security/cli/security-cli.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/jdbc/jdbc.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/sql-action/sql-action.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/sql-action/sql-action.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/sql-cli/sql-cli.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/sql-cli/sql-cli.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/sql-client/sql-client.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/sql-client/sql-client.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/plugin/sql/sql-proto/sql-proto.iml" filepath="$PROJECT_DIR$/x-pack/plugin/sql/sql-proto/sql-proto.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/full-cluster-restart/with-system-key/full-cluster-restart-with-system-key.iml" filepath="$PROJECT_DIR$/x-pack/qa/full-cluster-restart/with-system-key/full-cluster-restart-with-system-key.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/full-cluster-restart/without-system-key/full-cluster-restart-without-system-key.iml" filepath="$PROJECT_DIR$/x-pack/qa/full-cluster-restart/without-system-key/full-cluster-restart-without-system-key.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/rolling-upgrade/with-system-key/rolling-upgrade-with-system-key.iml" filepath="$PROJECT_DIR$/x-pack/qa/rolling-upgrade/with-system-key/rolling-upgrade-with-system-key.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/rolling-upgrade/without-system-key/rolling-upgrade-without-system-key.iml" filepath="$PROJECT_DIR$/x-pack/qa/rolling-upgrade/without-system-key/rolling-upgrade-without-system-key.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/multinode/multinode.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/multinode/multinode.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/no-security/no-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/no-security/no-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/security/sql-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/security/sql-security.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/active-directory/active-directory.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/active-directory/active-directory.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/hipchat/hipchat.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/hipchat/hipchat.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/jira/jira.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/jira/jira.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/pagerduty/pagerduty.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/pagerduty/pagerduty.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/third-party/slack/slack.iml" filepath="$PROJECT_DIR$/x-pack/qa/third-party/slack/slack.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/security/no-ssl/no-ssl.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/security/no-ssl/no-ssl.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/security/ssl/ssl.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/security/ssl/ssl.iml"/>
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="false" jdk-15="true" project-jdk-type="JavaSDK" assert-jdk-15="false" project-jdk-name="1.10">
+    <output url="file://$PROJECT_DIR$/out"/>
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true"/>
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git"/>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+          <settings/>
+        </UIState>
+      </state>
+      <state key="Copyright.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+        </UIState>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl>
+              <option name="proportions">
+                <list>
+                  <option value="0.2"/>
+                </list>
+              </option>
+            </SplitterProportionsDataImpl>
+          </splitter-proportions>
+          <last-edited>1.6</last-edited>
+        </UIState>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl/>
+          </splitter-proportions>
+          <settings/>
+        </UIState>
+      </state>
+    </states>
+  </component>
+</project>
