@@ -32,8 +32,9 @@ List projects = [
   'distribution:tools:launchers',
   'distribution:tools:plugin-cli',
   'server',
-  'server:cli'
-  ,'test:framework',
+  'mydemo',
+  'server:cli',
+  'test:framework',
   'test:fixtures:hdfs-fixture',
   'test:fixtures:krb5kdc-fixture',
   'test:fixtures:old-elasticsearch',
@@ -131,3 +132,6 @@ if (extraProjects.exists()) {
 
 // enable in preparation for Gradle 5.0
 enableFeaturePreview('STABLE_PUBLISHING')
+include 'myDemo'
+include 'mydemo'
+

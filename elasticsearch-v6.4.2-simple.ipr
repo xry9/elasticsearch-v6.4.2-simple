@@ -11,11 +11,11 @@
       <entry name="!?*.groovy" />
       <entry name="!?*.java" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="1.8">
-      <module name="client-test" target="1.7" />
-      <module name="java-version-checker" target="1.7" />
-      <module name="rest" target="1.7" />
-      <module name="sniffer" target="1.7" />
+    <bytecodeTargetLevel target="10">
+      <module name="client-test" target="10" />
+      <module name="java-version-checker" target="10" />
+      <module name="rest" target="10" />
+      <module name="sniffer" target="10" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
@@ -23,6 +23,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -156,6 +157,7 @@
       <module fileurl="file://$PROJECT_DIR$/x-pack/qa/multi-cluster-search-security/multi-cluster-search-security.iml" filepath="$PROJECT_DIR$/x-pack/qa/multi-cluster-search-security/multi-cluster-search-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/x-pack/qa/multi-node/multi-node.iml" filepath="$PROJECT_DIR$/x-pack/qa/multi-node/multi-node.iml" />
       <module fileurl="file://$PROJECT_DIR$/x-pack/qa/sql/multinode/multinode.iml" filepath="$PROJECT_DIR$/x-pack/qa/sql/multinode/multinode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mydemo.iml" filepath="$PROJECT_DIR$/.idea/modules/mydemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/distribution/bwc/next-bugfix-snapshot/next-bugfix-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/next-bugfix-snapshot/next-bugfix-snapshot.iml" />
       <module fileurl="file://$PROJECT_DIR$/distribution/bwc/next-minor-snapshot/next-minor-snapshot.iml" filepath="$PROJECT_DIR$/distribution/bwc/next-minor-snapshot/next-minor-snapshot.iml" />
       <module fileurl="file://$PROJECT_DIR$/qa/no-bootstrap-tests/no-bootstrap-tests.iml" filepath="$PROJECT_DIR$/qa/no-bootstrap-tests/no-bootstrap-tests.iml" />
@@ -263,7 +265,7 @@
       <module fileurl="file://$PROJECT_DIR$/distribution/archives/zip/zip.iml" filepath="$PROJECT_DIR$/distribution/archives/zip/zip.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.10" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" default="false" project-jdk-name="1.10" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SvnBranchConfigurationManager">
