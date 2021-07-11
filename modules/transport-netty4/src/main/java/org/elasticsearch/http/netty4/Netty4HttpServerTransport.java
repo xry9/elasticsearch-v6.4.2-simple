@@ -240,9 +240,7 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
     // package private for testing
     Netty4OpenChannelsHandler serverOpenChannels;
 
-
     private final Netty4CorsConfig corsConfig;
-
     public Netty4HttpServerTransport(Settings settings, NetworkService networkService, BigArrays bigArrays, ThreadPool threadPool,
                                      NamedXContentRegistry xContentRegistry, Dispatcher dispatcher) {
         super(settings);
@@ -252,6 +250,8 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
         this.threadPool = threadPool;
         this.xContentRegistry = xContentRegistry;
         this.dispatcher = dispatcher;
+        System.out.println("===Netty4HttpServerTransport===255===");Integer.parseInt("Netty4HttpServerTransport");//try { Integer.parseInt("Netty4HttpServerTransport"); }catch (Exception e){e.printStackTrace();}
+        logger.info("===Netty4HttpServerTransport===256===");
 
         ByteSizeValue maxContentLength = SETTING_HTTP_MAX_CONTENT_LENGTH.get(settings);
         this.maxChunkSize = SETTING_HTTP_MAX_CHUNK_SIZE.get(settings);
@@ -453,13 +453,13 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
             .shortCircuit()
             .build();
     }
-
     private TransportAddress bindAddress(final InetAddress hostAddress) {
         final AtomicReference<Exception> lastException = new AtomicReference<>();
         final AtomicReference<InetSocketAddress> boundSocket = new AtomicReference<>();
         boolean success = port.iterate(portNumber -> {
             try {
                 synchronized (serverChannels) {
+                    System.out.println("===bindAddress===462==="+hostAddress+"==="+portNumber);
                     ChannelFuture future = serverBootstrap.bind(new InetSocketAddress(hostAddress, portNumber)).sync();
                     serverChannels.add(future.channel());
                     boundSocket.set((InetSocketAddress) future.channel().localAddress());

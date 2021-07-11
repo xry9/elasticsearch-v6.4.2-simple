@@ -63,13 +63,13 @@ public abstract class AbstractLifecycleComponent extends AbstractComponent imple
         for (LifecycleListener listener : listeners) {
             listener.beforeStart();
         }
+        System.out.println("===start===66==="+this.getClass().getName());
         doStart();
         lifecycle.moveToStarted();
         for (LifecycleListener listener : listeners) {
             listener.afterStart();
         }
     }
-
     protected abstract void doStart();
 
     @SuppressWarnings({"unchecked"})

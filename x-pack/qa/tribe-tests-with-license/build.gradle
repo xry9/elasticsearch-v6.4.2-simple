@@ -35,14 +35,14 @@ test {
   include '**/*Tests.class'
 }
 
-String licensePath = xpackProject('license-tools').projectDir.toPath().resolve('src/test/resources').toString()
-sourceSets {
-  test {
-    resources {
-      srcDirs += [licensePath]
-    }
-  }
-}
+//String licensePath = xpackProject('license-tools').projectDir.toPath().resolve('src/test/resources').toString()
+//sourceSets {
+//  test {
+//    resources {
+//      srcDirs += [licensePath]
+//    }
+//  }
+//}
 
 project.forbiddenPatterns {
   exclude '**/*.key'

@@ -34,16 +34,16 @@ public class SecurityNetty4ServerTransport extends SecurityNetty4Transport {
             final SSLService sslService) {
         super(settings, threadPool, networkService, bigArrays, namedWriteableRegistry, circuitBreakerService, sslService);
         this.authenticator = authenticator;
+        System.out.println("===SecurityNetty4ServerTransport===37==="+this.getClass().getName());//Integer.parseInt("SecurityNetty4ServerTransport");
     }
-
     @Override
     protected void doStart() {
+        System.out.println("===doStart===41==="+this.getClass().getName()+"==="+super.getClass().getName()+"==="+(this.getClass().getName()==super.getClass().getName()));
         super.doStart();
         if (authenticator != null) {
             authenticator.setBoundTransportAddress(boundAddress(), profileBoundAddresses());
         }
     }
-
     @Override
     protected ChannelHandler getNoSslChannelInitializer(final String name) {
         return new IPFilterServerChannelInitializer(name);

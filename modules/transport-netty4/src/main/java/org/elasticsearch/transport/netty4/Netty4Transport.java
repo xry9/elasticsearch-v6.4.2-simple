@@ -111,7 +111,7 @@ public class Netty4Transport extends TcpTransport {
         super("netty", settings, threadPool, bigArrays, circuitBreakerService, namedWriteableRegistry, networkService);
         Netty4Utils.setAvailableProcessors(EsExecutors.PROCESSORS_SETTING.get(settings));
         this.workerCount = WORKER_COUNT.get(settings);
-
+        System.out.println("===Netty4Transport===114===");Integer.parseInt("Netty4Transport");
         // See AdaptiveReceiveBufferSizePredictor#DEFAULT_XXX for default values in netty..., we can use higher ones for us, even fixed one
         this.receivePredictorMin = NETTY_RECEIVE_PREDICTOR_MIN.get(settings);
         this.receivePredictorMax = NETTY_RECEIVE_PREDICTOR_MAX.get(settings);
@@ -122,16 +122,16 @@ public class Netty4Transport extends TcpTransport {
                 (int) receivePredictorMin.getBytes(), (int) receivePredictorMax.getBytes());
         }
     }
-
     @Override
     protected void doStart() {
+        System.out.println("===doStart===127===");
         boolean success = false;
         try {
             bootstrap = createBootstrap();
             if (NetworkService.NETWORK_SERVER.get(settings)) {
                 for (ProfileSettings profileSettings : profileSettings) {
                     createServerBootstrap(profileSettings);
-                    bindServer(profileSettings);
+                    Integer.parseInt("doStart");bindServer(profileSettings);
                 }
             }
             super.doStart();
@@ -241,13 +241,13 @@ public class Netty4Transport extends TcpTransport {
     protected NettyTcpChannel initiateChannel(DiscoveryNode node, TimeValue connectTimeout, ActionListener<Void> listener)
         throws IOException {
         ChannelFuture channelFuture = bootstrap.connect(node.getAddress().address());
+        System.out.println("===initiateChannel===244==="+node.getAddress().address());
         Channel channel = channelFuture.channel();
         if (channel == null) {
             Netty4Utils.maybeDie(channelFuture.cause());
             throw new IOException(channelFuture.cause());
         }
         addClosedExceptionLogger(channel);
-
         NettyTcpChannel nettyChannel = new NettyTcpChannel(channel);
         channel.attr(CHANNEL_KEY).set(nettyChannel);
 
@@ -270,12 +270,12 @@ public class Netty4Transport extends TcpTransport {
 
     @Override
     protected NettyTcpChannel bind(String name, InetSocketAddress address) {
+        System.out.println("===bind===273===");
         Channel channel = serverBootstraps.get(name).bind(address).syncUninterruptibly().channel();
         NettyTcpChannel esChannel = new NettyTcpChannel(channel);
         channel.attr(CHANNEL_KEY).set(esChannel);
         return esChannel;
     }
-
     ScheduledPing getPing() {
         return scheduledPing;
     }

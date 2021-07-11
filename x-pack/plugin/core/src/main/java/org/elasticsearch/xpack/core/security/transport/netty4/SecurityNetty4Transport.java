@@ -65,8 +65,8 @@ public class SecurityNetty4Transport extends Netty4Transport {
             this.profileConfiguration = Collections.emptyMap();
             this.sslConfiguration = null;
         }
+        System.out.println("===SecurityNetty4Transport===68==="+super.getClass().getName());try { Integer.parseInt("SecurityNetty4Transport"); }catch (Exception e){e.printStackTrace();}
     }
-
     public static Map<String, SSLConfiguration> getTransportProfileConfigurations(Settings settings, SSLService sslService,
                                                                                   SSLConfiguration defaultConfiguration) {
         Set<String> profileNames = settings.getGroups("transport.profiles.", true).keySet();
@@ -81,9 +81,9 @@ public class SecurityNetty4Transport extends Netty4Transport {
         }
         return profileConfiguration;
     }
-
     @Override
     protected void doStart() {
+        System.out.println("===doStart===86==="+this.getClass().getName()+"==="+super.getClass().getName());
         super.doStart();
     }
 

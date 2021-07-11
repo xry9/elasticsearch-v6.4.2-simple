@@ -11,11 +11,103 @@
       <entry name="!?*.groovy" />
       <entry name="!?*.java" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="10">
-      <module name="client-test" target="10" />
-      <module name="java-version-checker" target="10" />
-      <module name="rest" target="10" />
-      <module name="sniffer" target="10" />
+    <bytecodeTargetLevel target="1.10">
+      <module name="aggs-matrix-stats" target="1.8" />
+      <module name="analysis-common" target="1.8" />
+      <module name="analysis-icu" target="1.8" />
+      <module name="analysis-kuromoji" target="1.8" />
+      <module name="analysis-nori" target="1.8" />
+      <module name="analysis-phonetic" target="1.8" />
+      <module name="analysis-smartcn" target="1.8" />
+      <module name="analysis-stempel" target="1.8" />
+      <module name="analysis-ukrainian" target="1.8" />
+      <module name="benchmark" target="1.8" />
+      <module name="benchmarks" target="1.8" />
+      <module name="build-tools" target="1.8" />
+      <module name="client-benchmark-noop-api-plugin" target="1.8" />
+      <module name="client-test" target="1.7" />
+      <module name="custom-settings" target="1.8" />
+      <module name="deprecation" target="1.8" />
+      <module name="die-with-dignity" target="1.8" />
+      <module name="discovery-azure-classic" target="1.8" />
+      <module name="discovery-ec2" target="1.8" />
+      <module name="discovery-file" target="1.8" />
+      <module name="discovery-gce" target="1.8" />
+      <module name="elasticsearch-v6.4.2-simple-qa-vagrant" target="1.8" />
+      <module name="feature-aware" target="1.8" />
+      <module name="framework" target="1.8" />
+      <module name="graph" target="1.8" />
+      <module name="grok" target="1.8" />
+      <module name="hdfs-fixture" target="1.8" />
+      <module name="idp-fixture" target="1.8" />
+      <module name="ingest-attachment" target="1.8" />
+      <module name="ingest-common" target="1.8" />
+      <module name="ingest-geoip" target="1.8" />
+      <module name="ingest-user-agent" target="1.8" />
+      <module name="java-version-checker" target="1.7" />
+      <module name="jdbc" target="1.8" />
+      <module name="krb5kdc-fixture" target="1.8" />
+      <module name="lang-expression" target="1.8" />
+      <module name="lang-mustache" target="1.8" />
+      <module name="lang-painless" target="1.8" />
+      <module name="launchers" target="1.8" />
+      <module name="libs-cli" target="1.8" />
+      <module name="libs-core" target="1.8" />
+      <module name="license-tools" target="1.8" />
+      <module name="logger-usage" target="1.8" />
+      <module name="logstash" target="1.8" />
+      <module name="mapper-extras" target="1.8" />
+      <module name="mapper-murmur3" target="1.8" />
+      <module name="mapper-size" target="1.8" />
+      <module name="ml" target="1.8" />
+      <module name="monitoring" target="1.8" />
+      <module name="old-elasticsearch" target="1.8" />
+      <module name="painless-whitelist" target="1.8" />
+      <module name="parent-join" target="1.8" />
+      <module name="percolator" target="1.8" />
+      <module name="plugin-classloader" target="1.8" />
+      <module name="plugin-cli" target="1.8" />
+      <module name="plugin-core" target="1.8" />
+      <module name="plugin-security" target="1.8" />
+      <module name="plugin-sql" target="1.8" />
+      <module name="protocol" target="1.8" />
+      <module name="qa-sql" target="1.8" />
+      <module name="rank-eval" target="1.8" />
+      <module name="reindex" target="1.8" />
+      <module name="repository-azure" target="1.8" />
+      <module name="repository-gcs" target="1.8" />
+      <module name="repository-hdfs" target="1.8" />
+      <module name="repository-s3" target="1.8" />
+      <module name="repository-url" target="1.8" />
+      <module name="rescore" target="1.8" />
+      <module name="rest" target="1.7" />
+      <module name="rest-api-spec" target="1.8" />
+      <module name="rest-handler" target="1.8" />
+      <module name="rest-high-level" target="1.8" />
+      <module name="rollup" target="1.8" />
+      <module name="script-expert-scoring" target="1.8" />
+      <module name="secure-sm" target="1.8" />
+      <module name="security-cli" target="1.8" />
+      <module name="security-example-spi-extension" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="smb-fixture" target="1.8" />
+      <module name="sniffer" target="1.7" />
+      <module name="spi" target="1.8" />
+      <module name="sql-action" target="1.8" />
+      <module name="sql-cli" target="1.8" />
+      <module name="sql-client" target="1.8" />
+      <module name="sql-proto" target="1.8" />
+      <module name="store-smb" target="1.8" />
+      <module name="transport" target="1.8" />
+      <module name="transport-client" target="1.8" />
+      <module name="transport-netty4" target="1.8" />
+      <module name="tribe" target="1.8" />
+      <module name="upgrade" target="1.8" />
+      <module name="watcher" target="1.8" />
+      <module name="wildfly" target="1.8" />
+      <module name="x-content" target="1.8" />
+      <module name="x-pack-qa-full-cluster-restart" target="1.8" />
+      <module name="x-pack-qa-rolling-upgrade" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
@@ -263,6 +355,9 @@
       <module fileurl="file://$PROJECT_DIR$/x-pack/qa/vagrant/x-pack-qa-vagrant.iml" filepath="$PROJECT_DIR$/x-pack/qa/vagrant/x-pack-qa-vagrant.iml" />
       <module fileurl="file://$PROJECT_DIR$/x-pack/test/x-pack-test.iml" filepath="$PROJECT_DIR$/x-pack/test/x-pack-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/distribution/archives/zip/zip.iml" filepath="$PROJECT_DIR$/distribution/archives/zip/zip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mydemo/myDemo.iml" filepath="$PROJECT_DIR$/mydemo/myDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mydemo/myDemo.iml" filepath="$PROJECT_DIR$/mydemo/myDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mydemo/myDemo.iml" filepath="$PROJECT_DIR$/mydemo/myDemo.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_10" default="false" project-jdk-name="1.10" project-jdk-type="JavaSDK">
