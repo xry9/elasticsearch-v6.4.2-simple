@@ -34,41 +34,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/processorPath.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/processorPath.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.local-idea-is-configured" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/4.9/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/4.9/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/4.9/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/4.9/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticsearch-v6.4.2-simple.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-v6.4.2-simple.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticsearch-v6.4.2-simple.iws" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-v6.4.2-simple.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/transport-netty4/src/main/java/org/elasticsearch/http/netty4/Netty4HttpServerTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/transport-netty4/src/main/java/org/elasticsearch/http/netty4/Netty4HttpServerTransport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/transport-netty4/src/main/java/org/elasticsearch/transport/netty4/Netty4Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/transport-netty4/src/main/java/org/elasticsearch/transport/netty4/Netty4Transport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydemo/src/main/java/HelloWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/src/main/java/HelloWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/src/main/java/netty/SimpleNettyServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/org/elasticsearch/common/component/AbstractLifecycleComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/org/elasticsearch/common/component/AbstractLifecycleComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/bin/key-pair-generator" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/bin/license-generator" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/bin/verify-license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/src/main/java/org/elasticsearch/license/licensor/LicenseSigner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/src/main/java/org/elasticsearch/license/licensor/tools/KeyPairGeneratorTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/src/main/java/org/elasticsearch/license/licensor/tools/LicenseGeneratorTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/license-tools/src/main/java/org/elasticsearch/license/licensor/tools/LicenseVerificationTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/plugin/core/src/main/java/org/elasticsearch/xpack/core/security/transport/netty4/SecurityNetty4Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/x-pack/plugin/core/src/main/java/org/elasticsearch/xpack/core/security/transport/netty4/SecurityNetty4Transport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/plugin/security/src/main/java/org/elasticsearch/xpack/security/transport/netty4/SecurityNetty4ServerTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/x-pack/plugin/security/src/main/java/org/elasticsearch/xpack/security/transport/netty4/SecurityNetty4ServerTransport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x-pack/qa/tribe-tests-with-license/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/x-pack/qa/tribe-tests-with-license/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydemo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mydemo/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -369,10 +344,10 @@
     </state>
     <state x="421" y="205" width="816" height="490" key="find.popup/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1623311833187" />
     <state x="421" y="205" width="816" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1626010137733" />
-    <state x="88" y="62" key="new project wizard" timestamp="1622949729594">
+    <state x="88" y="62" key="new project wizard" timestamp="1626013160696">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="88" y="62" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1622949729594" />
+    <state x="88" y="62" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1626013160696" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1626010581792">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
