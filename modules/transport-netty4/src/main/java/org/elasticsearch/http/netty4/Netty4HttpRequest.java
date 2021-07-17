@@ -18,13 +18,14 @@
  */
 
 package org.elasticsearch.http.netty4;
-
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpMethod;
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.bytes.BytesArray;
 import org.elasticsearch.common.bytes.BytesReference;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.common.xcontent.NamedXContentRegistry;
 import org.elasticsearch.rest.RestRequest;
 import org.elasticsearch.transport.netty4.Netty4Utils;
@@ -37,9 +38,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 public class Netty4HttpRequest extends RestRequest {
-
+    Logger logger = Loggers.getLogger(Netty4HttpRequest.class);
     private final FullHttpRequest request;
     private final Channel channel;
     private final BytesReference content;
@@ -55,6 +55,7 @@ public class Netty4HttpRequest extends RestRequest {
      */
     Netty4HttpRequest(NamedXContentRegistry xContentRegistry, FullHttpRequest request, Channel channel) {
         super(xContentRegistry, request.uri(), new HttpHeadersMap(request.headers()));
+        logger.info("===Netty4HttpRequest===58==="+request.uri()+"==="+request.getClass().getName());
         this.request = request;
         this.channel = channel;
         if (request.content().isReadable()) {
@@ -63,7 +64,6 @@ public class Netty4HttpRequest extends RestRequest {
             this.content = BytesArray.EMPTY;
         }
     }
-
     /**
      * Construct a new request. In contrast to
      * {@link Netty4HttpRequest#Netty4HttpRequest(NamedXContentRegistry, Map, String, FullHttpRequest, Channel)}, the URI is not decoded so

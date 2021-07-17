@@ -21,6 +21,7 @@ import java.util.TimeZone;
  * Sql query request for JDBC/CLI client
  */
 public class SqlQueryRequest extends AbstractSqlRequest {
+
     @Nullable
     private final String cursor;
     private final String query;
@@ -32,10 +33,9 @@ public class SqlQueryRequest extends AbstractSqlRequest {
     private final ToXContent filter;
     private final List<SqlTypedParamValue> params;
 
-
-    public SqlQueryRequest(Mode mode, String query, List<SqlTypedParamValue> params, TimeZone timeZone,
-                           int fetchSize, TimeValue requestTimeout, TimeValue pageTimeout, ToXContent filter, String cursor) {
+    public SqlQueryRequest(Mode mode, String query, List<SqlTypedParamValue> params, TimeZone timeZone, int fetchSize, TimeValue requestTimeout, TimeValue pageTimeout, ToXContent filter, String cursor) {
         super(mode);
+        System.out.println("===SqlQueryRequest===38==="+query);
         this.query = query;
         this.params = params;
         this.timeZone = timeZone;

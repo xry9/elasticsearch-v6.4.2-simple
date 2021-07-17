@@ -20,8 +20,10 @@ package org.elasticsearch.transport;
 
 import com.carrotsearch.hppc.IntHashSet;
 import com.carrotsearch.hppc.IntSet;
+import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.ParameterizedMessage;
 import org.elasticsearch.common.Booleans;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.core.internal.io.IOUtils;
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.Version;
@@ -120,12 +122,10 @@ import static org.elasticsearch.common.settings.Setting.timeSetting;
 import static org.elasticsearch.common.transport.NetworkExceptionHelper.isCloseConnectionException;
 import static org.elasticsearch.common.transport.NetworkExceptionHelper.isConnectException;
 import static org.elasticsearch.common.util.concurrent.ConcurrentCollections.newConcurrentMap;
-
 public abstract class TcpTransport extends AbstractLifecycleComponent implements Transport {
-
+    public Logger logger = Loggers.getLogger(TcpTransport.class);
     public static final String TRANSPORT_SERVER_WORKER_THREAD_NAME_PREFIX = "transport_server_worker";
     public static final String TRANSPORT_CLIENT_BOSS_THREAD_NAME_PREFIX = "transport_client_boss";
-
     public static final Setting<List<String>> HOST =
         listSetting("transport.host", emptyList(), Function.identity(), Setting.Property.NodeScope);
     public static final Setting<List<String>> BIND_HOST =
@@ -1387,8 +1387,8 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
     /**
      * This method handles the message receive part for both request and responses
      */
-    public final void messageReceived(BytesReference reference, TcpChannel channel, String profileName,
-                                      InetSocketAddress remoteAddress, int messageLengthBytes) throws IOException {
+    public final void messageReceived(BytesReference reference, TcpChannel channel, String profileName, InetSocketAddress remoteAddress, int messageLengthBytes) throws IOException {
+        logger.info("===messageReceived===1391==="+channel.getLocalAddress()+"==="+remoteAddress+"==="+profileName);
         final int totalMessageSize = messageLengthBytes + TcpHeader.MARKER_BYTES_SIZE + TcpHeader.MESSAGE_LENGTH_SIZE;
         readBytesMetric.inc(totalMessageSize);
         // we have additional bytes to read, outside of the header
@@ -1406,9 +1406,7 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
                     compressor = CompressorFactory.compressor(reference.slice(bytesConsumed, reference.length() - bytesConsumed));
                 } catch (NotCompressedException ex) {
                     int maxToRead = Math.min(reference.length(), 10);
-                    StringBuilder sb = new StringBuilder("stream marked as compressed, but no compressor found, first [").append(maxToRead)
-                        .append("] content bytes out of [").append(reference.length())
-                        .append("] readable bytes with message size [").append(messageLengthBytes).append("] ").append("] are [");
+                    StringBuilder sb = new StringBuilder("stream marked as compressed, but no compressor found, first [").append(maxToRead).append("] content bytes out of [").append(reference.length()).append("] readable bytes with message size [").append(messageLengthBytes).append("] ").append("] are [");
                     for (int i = 0; i < maxToRead; i++) {
                         sb.append(reference.get(i)).append(",");
                     }
@@ -1424,6 +1422,7 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
             threadPool.getThreadContext().readHeaders(streamIn);
             threadPool.getThreadContext().putTransient("_remote_address", remoteAddress);
             if (TransportStatus.isRequest(status)) {
+                logger.info("===messageReceived===1425==="+requestId);
                 handleRequest(channel, profileName, streamIn, requestId, messageLengthBytes, version, remoteAddress, status);
             } else {
                 final TransportResponseHandler<?> handler;
@@ -1437,6 +1436,7 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
                         handler = theHandler;
                     }
                 }
+                logger.info("===messageReceived===1439==="+handler.getClass().getName());
                 // ignore if its null, the service logs it
                 if (handler != null) {
                     if (TransportStatus.isError(status)) {
@@ -1527,9 +1527,7 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
         });
     }
 
-    protected String handleRequest(TcpChannel channel, String profileName, final StreamInput stream, long requestId,
-                                   int messageLengthBytes, Version version, InetSocketAddress remoteAddress, byte status)
-        throws IOException {
+    protected String handleRequest(TcpChannel channel, String profileName, final StreamInput stream, long requestId, int messageLengthBytes, Version version, InetSocketAddress remoteAddress, byte status) throws IOException {
         final Set<String> features;
         if (version.onOrAfter(Version.V_6_3_0)) {
             features = Collections.unmodifiableSet(new TreeSet<>(Arrays.asList(stream.readStringArray())));
@@ -1541,21 +1539,23 @@ public abstract class TcpTransport extends AbstractLifecycleComponent implements
         TransportChannel transportChannel = null;
         try {
             if (TransportStatus.isHandshake(status)) {
+                logger.info("===handleRequest===1542==="+channel.getLocalAddress()+"==="+remoteAddress+"==="+action);
                 final VersionHandshakeResponse response = new VersionHandshakeResponse(getCurrentVersion());
-                sendResponse(version, features, channel, response, requestId, HANDSHAKE_ACTION_NAME, TransportResponseOptions.EMPTY,
-                    TransportStatus.setHandshake((byte) 0));
+                sendResponse(version, features, channel, response, requestId, HANDSHAKE_ACTION_NAME, TransportResponseOptions.EMPTY, TransportStatus.setHandshake((byte) 0));
             } else {
+
                 final RequestHandlerRegistry reg = getRequestHandler(action);
-                if (reg == null) {
-                    throw new ActionNotFoundTransportException(action);
+                if (!"internal:discovery/zen/fd/ping".equals(action)&&!"internal:discovery/zen/fd/master_ping".equals(action)){
+                    logger.info("===handleRequest===1549==="+channel.getLocalAddress()+"==="+remoteAddress+"==="+action+"==="+reg.handler.getClass().getName());
                 }
+                if (reg == null) { throw new ActionNotFoundTransportException(action); }
                 if (reg.canTripCircuitBreaker()) {
                     getInFlightRequestBreaker().addEstimateBytesAndMaybeBreak(messageLengthBytes, "<transport_request>");
                 } else {
                     getInFlightRequestBreaker().addWithoutBreaking(messageLengthBytes);
                 }
-                transportChannel = new TcpTransportChannel(this, channel, transportName, action, requestId, version, features, profileName,
-                    messageLengthBytes);
+                transportChannel = new TcpTransportChannel(this, channel, transportName, action, requestId, version, features, profileName, messageLengthBytes);
+
                 final TransportRequest request = reg.newRequest(stream);
                 request.remoteAddress(new TransportAddress(remoteAddress));
                 // in case we throw an exception, i.e. when the limit is hit, we don't want to verify

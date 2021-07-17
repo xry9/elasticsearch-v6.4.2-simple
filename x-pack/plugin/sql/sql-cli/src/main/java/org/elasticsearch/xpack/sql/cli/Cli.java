@@ -47,12 +47,12 @@ public class Cli extends LoggingAwareCommand {
     public static void main(String[] args) throws Exception {
         final Cli cli = new Cli(new JLineTerminal(TerminalBuilder.builder().build(), true));
         configureJLineLogging();
+
         int status = cli.main(args, Terminal.DEFAULT);
         if (status != ExitCodes.OK) {
             exit(status);
         }
     }
-
     private static void configureJLineLogging() {
         try {
             /* Initialize the logger from the a properties file we bundle. This makes sure

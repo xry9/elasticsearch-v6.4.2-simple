@@ -517,10 +517,10 @@ public class TransportService extends AbstractLifecycleComponent implements Tran
     }
 
     public final <T extends TransportResponse> void sendRequest(final Transport.Connection connection, final String action,
-                                                                final TransportRequest request,
-                                                                final TransportRequestOptions options,
-                                                                TransportResponseHandler<T> handler) {
-
+                                                                final TransportRequest request, final TransportRequestOptions options, TransportResponseHandler<T> handler) {
+        if (!"internal:discovery/zen/fd/ping".equals(action)&&!"internal:discovery/zen/fd/master_ping".equals(action)){
+            logger.info("===sendRequest===522==="+connection.getNode().getAddress()+"==="+action+"==="+handler.getClass().getName());
+        }
         asyncSender.sendRequest(connection, action, request, options, handler);
     }
 

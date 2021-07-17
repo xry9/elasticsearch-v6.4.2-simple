@@ -111,7 +111,7 @@ public class Netty4Transport extends TcpTransport {
         super("netty", settings, threadPool, bigArrays, circuitBreakerService, namedWriteableRegistry, networkService);
         Netty4Utils.setAvailableProcessors(EsExecutors.PROCESSORS_SETTING.get(settings));
         this.workerCount = WORKER_COUNT.get(settings);
-        System.out.println("===Netty4Transport===114===");Integer.parseInt("Netty4Transport");
+        System.out.println("===Netty4Transport===114===");
         // See AdaptiveReceiveBufferSizePredictor#DEFAULT_XXX for default values in netty..., we can use higher ones for us, even fixed one
         this.receivePredictorMin = NETTY_RECEIVE_PREDICTOR_MIN.get(settings);
         this.receivePredictorMax = NETTY_RECEIVE_PREDICTOR_MAX.get(settings);
@@ -131,7 +131,7 @@ public class Netty4Transport extends TcpTransport {
             if (NetworkService.NETWORK_SERVER.get(settings)) {
                 for (ProfileSettings profileSettings : profileSettings) {
                     createServerBootstrap(profileSettings);
-                    Integer.parseInt("doStart");bindServer(profileSettings);
+                    bindServer(profileSettings);
                 }
             }
             super.doStart();
@@ -142,12 +142,12 @@ public class Netty4Transport extends TcpTransport {
             }
         }
     }
-
     private Bootstrap createBootstrap() {
+        logger.info("===Bootstrap===146===");
+
         final Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(new NioEventLoopGroup(workerCount, daemonThreadFactory(settings, TRANSPORT_CLIENT_BOSS_THREAD_NAME_PREFIX)));
         bootstrap.channel(NioSocketChannel.class);
-
         bootstrap.handler(getClientChannelInitializer());
 
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, Math.toIntExact(defaultConnectionProfile.getConnectTimeout().millis()));
@@ -193,10 +193,10 @@ public class Netty4Transport extends TcpTransport {
         final ThreadFactory workerFactory = daemonThreadFactory(this.settings, TRANSPORT_SERVER_WORKER_THREAD_NAME_PREFIX, name);
 
         final ServerBootstrap serverBootstrap = new ServerBootstrap();
-
+        logger.info("===Bootstrap===196===");
+        System.out.println("===Bootstrap===197===");
         serverBootstrap.group(new NioEventLoopGroup(workerCount, workerFactory));
         serverBootstrap.channel(NioServerSocketChannel.class);
-
         serverBootstrap.childHandler(getServerChannelInitializer(name));
 
         serverBootstrap.childOption(ChannelOption.TCP_NODELAY, profileSettings.tcpNoDelay);
@@ -241,7 +241,8 @@ public class Netty4Transport extends TcpTransport {
     protected NettyTcpChannel initiateChannel(DiscoveryNode node, TimeValue connectTimeout, ActionListener<Void> listener)
         throws IOException {
         ChannelFuture channelFuture = bootstrap.connect(node.getAddress().address());
-        System.out.println("===initiateChannel===244==="+node.getAddress().address());
+        logger.info("===initiateChannel===244==="+node.getAddress().address());
+
         Channel channel = channelFuture.channel();
         if (channel == null) {
             Netty4Utils.maybeDie(channelFuture.cause());
@@ -250,7 +251,6 @@ public class Netty4Transport extends TcpTransport {
         addClosedExceptionLogger(channel);
         NettyTcpChannel nettyChannel = new NettyTcpChannel(channel);
         channel.attr(CHANNEL_KEY).set(nettyChannel);
-
         channelFuture.addListener(f -> {
             if (f.isSuccess()) {
                 listener.onResponse(null);

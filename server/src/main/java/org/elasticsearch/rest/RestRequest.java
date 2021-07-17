@@ -18,7 +18,7 @@
  */
 
 package org.elasticsearch.rest;
-
+import org.apache.logging.log4j.Logger;
 import org.apache.lucene.util.SetOnce;
 import org.elasticsearch.ElasticsearchParseException;
 import org.elasticsearch.common.Booleans;
@@ -28,6 +28,7 @@ import org.elasticsearch.common.Strings;
 import org.elasticsearch.common.bytes.BytesArray;
 import org.elasticsearch.common.bytes.BytesReference;
 import org.elasticsearch.common.collect.Tuple;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.LoggingDeprecationHandler;
@@ -50,9 +51,8 @@ import java.util.stream.Collectors;
 
 import static org.elasticsearch.common.unit.ByteSizeValue.parseBytesSizeValue;
 import static org.elasticsearch.common.unit.TimeValue.parseTimeValue;
-
 public abstract class RestRequest implements ToXContent.Params {
-
+    Logger logger = Loggers.getLogger(RestRequest.class);
     // tchar pattern as defined by RFC7230 section 3.2.6
     private static final Pattern TCHAR_PATTERN = Pattern.compile("[a-zA-z0-9!#$%&'*+\\-.\\^_`|~]+");
 
@@ -112,10 +112,10 @@ public abstract class RestRequest implements ToXContent.Params {
     public RestRequest(
             final NamedXContentRegistry xContentRegistry,
             final Map<String, String> params,
-            final String path,
-            final Map<String, List<String>> headers) {
+            final String path, final Map<String, List<String>> headers) {
         final XContentType xContentType;
         try {
+            logger.info("===RestRequest===118==="+path+"==="+params+"==="+headers);try { Integer.parseInt("params"); }catch (Exception e){logger.error("===", e);}
             xContentType = parseContentType(headers.get("Content-Type"));
         } catch (final IllegalArgumentException e) {
             throw new ContentTypeHeaderException(e);

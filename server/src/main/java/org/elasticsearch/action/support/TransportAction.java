@@ -71,10 +71,10 @@ public abstract class TransportAction<Request extends ActionRequest, Response ex
          * While this version of execute could delegate to the TaskListener
          * version of execute that'd add yet another layer of wrapping on the
          * listener and prevent us from using the listener bare if there isn't a
-         * task. That just seems like too many objects. Thus the two versions of
-         * this method.
+         * task. That just seems like too many objects. Thus the two versions of this method.
          */
         Task task = taskManager.register("transport", actionName, request);
+        logger.info("===execute===77==="+(task == null?"null":task.getClass().getName())+"==="+request.getClass().getName());
         if (task == null) {
             execute(null, request, listener);
         } else {
@@ -156,7 +156,6 @@ public abstract class TransportAction<Request extends ActionRequest, Response ex
             this.action = action;
             this.logger = logger;
         }
-
         @Override
         public void proceed(Task task, String actionName, Request request, ActionListener<Response> listener) {
             int i = index.getAndIncrement();
@@ -164,6 +163,7 @@ public abstract class TransportAction<Request extends ActionRequest, Response ex
                 if (i < this.action.filters.length) {
                     this.action.filters[i].apply(task, actionName, request, listener, this);
                 } else if (i == this.action.filters.length) {
+                    logger.info("===proceed===166==="+actionName+"==="+this.action.getClass().getName());
                     this.action.doExecute(task, request, listener);
                 } else {
                     listener.onFailure(new IllegalStateException("proceed was called too many times"));

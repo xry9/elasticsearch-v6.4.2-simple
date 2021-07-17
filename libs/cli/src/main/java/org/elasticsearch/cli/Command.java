@@ -120,7 +120,7 @@ public abstract class Command implements Closeable {
         } else {
             terminal.setVerbosity(Terminal.Verbosity.NORMAL);
         }
-
+        System.out.println("===mainWithoutErrorHandling===123==="+this.getClass().getName());
         execute(terminal, options);
     }
 

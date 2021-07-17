@@ -18,7 +18,6 @@
  */
 
 package org.elasticsearch.http.netty4;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
@@ -35,10 +34,12 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.handler.codec.http.HttpVersion;
 import io.netty.handler.codec.http.cookie.ServerCookieDecoder;
 import io.netty.handler.codec.http.cookie.ServerCookieEncoder;
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.bytes.BytesReference;
 import org.elasticsearch.common.io.stream.BytesStreamOutput;
 import org.elasticsearch.common.io.stream.ReleasableBytesStreamOutput;
 import org.elasticsearch.common.lease.Releasable;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.common.util.concurrent.ThreadContext;
 import org.elasticsearch.http.netty4.cors.Netty4CorsHandler;
 import org.elasticsearch.http.netty4.pipelining.HttpPipelinedRequest;
@@ -52,9 +53,8 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 final class Netty4HttpChannel extends AbstractRestChannel {
-
+    Logger logger = Loggers.getLogger(Netty4HttpChannel.class);
     private final Netty4HttpServerTransport transport;
     private final Channel channel;
     private final FullHttpRequest nettyRequest;
@@ -87,11 +87,10 @@ final class Netty4HttpChannel extends AbstractRestChannel {
     protected BytesStreamOutput newBytesOutput() {
         return new ReleasableBytesStreamOutput(transport.bigArrays);
     }
-
     @Override
     public void sendResponse(RestResponse response) {
-        // if the response object was created upstream, then use it;
-        // otherwise, create a new one
+        logger.info("===sendResponse===92==="+response.contentType());
+        // if the response object was created upstream, then use it; otherwise, create a new one
         ByteBuf buffer = Netty4Utils.toByteBuf(response.content());
         final FullHttpResponse resp;
         if (HttpMethod.HEAD.equals(nettyRequest.method())) {

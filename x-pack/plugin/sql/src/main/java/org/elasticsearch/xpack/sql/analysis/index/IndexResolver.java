@@ -8,6 +8,7 @@ package org.elasticsearch.xpack.sql.analysis.index;
 import com.carrotsearch.hppc.cursors.ObjectCursor;
 import com.carrotsearch.hppc.cursors.ObjectObjectCursor;
 
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.ElasticsearchSecurityException;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.admin.indices.alias.get.GetAliasesRequest;
@@ -20,11 +21,12 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.cluster.metadata.AliasMetaData;
 import org.elasticsearch.cluster.metadata.MappingMetaData;
 import org.elasticsearch.common.collect.ImmutableOpenMap;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.index.IndexNotFoundException;
+import org.elasticsearch.xpack.sql.expression.function.scalar.math.E;
 import org.elasticsearch.xpack.sql.type.EsField;
 import org.elasticsearch.xpack.sql.type.Types;
 import org.elasticsearch.xpack.sql.util.CollectionUtils;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -36,11 +38,10 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
-
 import static java.util.Collections.emptyList;
 
 public class IndexResolver {
-
+    static Logger logger = Loggers.getLogger(IndexResolver.class);
     public enum IndexType {
 
         INDEX("BASE TABLE"),
@@ -217,10 +218,10 @@ public class IndexResolver {
      * Resolves a pattern to one (potentially compound meaning that spawns multiple indices) mapping.
      */
     public void resolveWithSameMapping(String indexWildcard, String javaRegex, ActionListener<IndexResolution> listener) {
+        logger.info("===resolveWithSameMapping===221==="+indexWildcard+"==="+javaRegex);
         GetIndexRequest getIndexRequest = createGetIndexRequest(indexWildcard);
         client.admin().indices().getIndex(getIndexRequest, ActionListener.wrap(response -> {
             ImmutableOpenMap<String, ImmutableOpenMap<String, MappingMetaData>> mappings = response.getMappings();
-
             List<IndexResolution> resolutions;
             if (mappings.size() > 0) {
                 resolutions = new ArrayList<>(mappings.size());
@@ -267,7 +268,6 @@ public class IndexResolver {
         }
         return merged;
     }
-
     /**
      * Resolves a pattern to multiple, separate indices.
      */
@@ -296,8 +296,8 @@ public class IndexResolver {
             listener.onResponse(results);
         }, listener::onFailure));
     }
-
     private static GetIndexRequest createGetIndexRequest(String index) {
+        logger.info("===createGetIndexRequest===300==="+index);try { Integer.parseInt("createGetIndexRequest"); }catch (Exception e){logger.error("===", e);}
         return new GetIndexRequest()
                 .local(true)
                 .indices(index)

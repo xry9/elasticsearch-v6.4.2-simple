@@ -24,10 +24,11 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.Attribute;
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.bytes.BytesReference;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.transport.TcpHeader;
 import org.elasticsearch.transport.Transports;
-
 import java.net.InetSocketAddress;
 
 /**
@@ -35,15 +36,13 @@ import java.net.InetSocketAddress;
  * to the relevant action.
  */
 final class Netty4MessageChannelHandler extends ChannelDuplexHandler {
-
+    private Logger logger = Loggers.getLogger(Netty4MessageChannelHandler.class);;
     private final Netty4Transport transport;
     private final String profileName;
-
     Netty4MessageChannelHandler(Netty4Transport transport, String profileName) {
         this.transport = transport;
         this.profileName = profileName;
     }
-
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Transports.assertTransportThread();
@@ -61,6 +60,7 @@ final class Netty4MessageChannelHandler extends ChannelDuplexHandler {
             // buffer, or in the cumulative buffer, which is cleaned each time so it could be bigger than the actual size
             BytesReference reference = Netty4Utils.toBytesReference(buffer, remainingMessageSize);
             Attribute<NettyTcpChannel> channelAttribute = channel.attr(Netty4Transport.CHANNEL_KEY);
+            //logger.info("===channelRead===63==="+(InetSocketAddress) channel.localAddress()+"==="+(InetSocketAddress) channel.remoteAddress());
             transport.messageReceived(reference, channelAttribute.get(), profileName, remoteAddress, remainingMessageSize);
         } finally {
             // Set the expected position of the buffer, no matter what happened

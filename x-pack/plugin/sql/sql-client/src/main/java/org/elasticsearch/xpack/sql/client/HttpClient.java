@@ -81,13 +81,13 @@ public class HttpClient {
     public boolean queryClose(String cursor) throws SQLException {
         SqlClearCursorResponse response = post(Protocol.CLEAR_CURSOR_REST_ENDPOINT,
             new SqlClearCursorRequest(Mode.PLAIN, cursor),
-            SqlClearCursorResponse::fromXContent);
+                SqlClearCursorResponse::fromXContent);
         return response.isSucceeded();
     }
 
     private <Request extends AbstractSqlRequest, Response> Response post(String path, Request request,
-            CheckedFunction<XContentParser, Response, IOException> responseParser)
-            throws SQLException {
+            CheckedFunction<XContentParser, Response, IOException> responseParser) throws SQLException {
+        System.out.println("===post===90==="+path+"==="+request.getClass().getName());
         byte[] requestBytes = toXContent(request);
         String query = "error_trace&mode=" + request.mode();
         Tuple<XContentType, byte[]> response =

@@ -250,7 +250,7 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
         this.threadPool = threadPool;
         this.xContentRegistry = xContentRegistry;
         this.dispatcher = dispatcher;
-        System.out.println("===Netty4HttpServerTransport===255===");Integer.parseInt("Netty4HttpServerTransport");//try { Integer.parseInt("Netty4HttpServerTransport"); }catch (Exception e){e.printStackTrace();}
+        System.out.println("===Netty4HttpServerTransport===255===");
         logger.info("===Netty4HttpServerTransport===256===");
 
         ByteSizeValue maxContentLength = SETTING_HTTP_MAX_CONTENT_LENGTH.get(settings);
@@ -320,11 +320,11 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
         boolean success = false;
         try {
             this.serverOpenChannels = new Netty4OpenChannelsHandler(logger);
-
             serverBootstrap = new ServerBootstrap();
+            logger.info("===Bootstrap===324===");
 
-            serverBootstrap.group(new NioEventLoopGroup(workerCount, daemonThreadFactory(settings,
-                HTTP_SERVER_WORKER_THREAD_NAME_PREFIX)));
+            serverBootstrap.group(new NioEventLoopGroup(workerCount, daemonThreadFactory(settings, HTTP_SERVER_WORKER_THREAD_NAME_PREFIX)));
+
             serverBootstrap.channel(NioServerSocketChannel.class);
 
             serverBootstrap.childHandler(configureServerChannelHandler());
@@ -535,10 +535,10 @@ public class Netty4HttpServerTransport extends AbstractLifecycleComponent implem
     void dispatchRequest(final RestRequest request, final RestChannel channel) {
         final ThreadContext threadContext = threadPool.getThreadContext();
         try (ThreadContext.StoredContext ignore = threadContext.stashContext()) {
+            logger.info("===dispatchRequest===58==="+request.getLocalAddress()+"==="+request.getRemoteAddress()+"==="+request.uri()+"==="+dispatcher.getClass().getName());
             dispatcher.dispatchRequest(request, channel, threadContext);
         }
     }
-
     void dispatchBadRequest(final RestRequest request, final RestChannel channel, final Throwable cause) {
         final ThreadContext threadContext = threadPool.getThreadContext();
         try (ThreadContext.StoredContext ignore = threadContext.stashContext()) {

@@ -20,10 +20,10 @@ public class CliCommands implements CliCommand {
     public CliCommands(CliCommand... commands) {
         this.commands = Arrays.asList(commands);
     }
-
     @Override
     public boolean handle(CliTerminal terminal, CliSession cliSession, String line) {
         for (CliCommand cliCommand : commands) {
+            System.out.println("===handle===26==="+cliCommand.getClass().getName());
             if (cliCommand.handle(terminal, cliSession, line)) {
                 return true;
             }

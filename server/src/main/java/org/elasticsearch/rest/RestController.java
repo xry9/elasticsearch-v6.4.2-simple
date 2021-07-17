@@ -207,22 +207,22 @@ public class RestController extends AbstractComponent implements HttpServerTrans
     /**
      * Dispatch the request, if possible, returning true if a response was sent or false otherwise.
      */
-    boolean dispatchRequest(final RestRequest request, final RestChannel channel, final NodeClient client,
-                            final Optional<RestHandler> mHandler) throws Exception {
+    boolean dispatchRequest(final RestRequest request, final RestChannel channel, final NodeClient client, final Optional<RestHandler> mHandler) throws Exception {
         final int contentLength = request.hasContent() ? request.content().length() : 0;
 
         RestChannel responseChannel = channel;
         // Indicator of whether a response was sent or not
         boolean requestHandled;
+        logger.info("===dispatchRequest===216==="+request.uri()+"==="+(contentLength > 0 && mHandler.map(h -> hasContentType(request, h) == false).orElse(false))+"==="+(contentLength > 0 && mHandler.map(h -> h.supportsContentStream()).orElse(false) && request.getXContentType() != XContentType.JSON && request.getXContentType() != XContentType.SMILE)+"==="+mHandler.isPresent());
 
         if (contentLength > 0 && mHandler.map(h -> hasContentType(request, h) == false).orElse(false)) {
             sendContentTypeErrorMessage(request, channel);
             requestHandled = true;
-        } else if (contentLength > 0 && mHandler.map(h -> h.supportsContentStream()).orElse(false) &&
-            request.getXContentType() != XContentType.JSON && request.getXContentType() != XContentType.SMILE) {
+        } else if (contentLength > 0 && mHandler.map(h -> h.supportsContentStream()).orElse(false) && request.getXContentType() != XContentType.JSON && request.getXContentType() != XContentType.SMILE) {
+
             channel.sendResponse(BytesRestResponse.createSimpleErrorResponse(channel,
-                RestStatus.NOT_ACCEPTABLE, "Content-Type [" + request.getXContentType() +
-                    "] does not support stream parsing. Use JSON or SMILE instead"));
+                RestStatus.NOT_ACCEPTABLE, "Content-Type [" + request.getXContentType() + "] does not support stream parsing. Use JSON or SMILE instead"));
+
             requestHandled = true;
         } else if (mHandler.isPresent()) {
 
@@ -234,8 +234,8 @@ public class RestController extends AbstractComponent implements HttpServerTrans
                 }
                 // iff we could reserve bytes for the request we need to send the response also over this channel
                 responseChannel = new ResourceHandlingHttpChannel(channel, circuitBreakerService, contentLength);
-
                 final RestHandler wrappedHandler = mHandler.map(h -> handlerWrapper.apply(h)).get();
+                logger.info("===dispatchRequest===238==="+wrappedHandler.getClass().getName()+"==="+client.getLocalNodeId());
                 wrappedHandler.handleRequest(request, responseChannel, client);
                 requestHandled = true;
             } catch (Exception e) {

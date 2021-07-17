@@ -52,17 +52,17 @@ public class TransportSqlQueryAction extends HandledTransportAction<SqlQueryRequ
     @Override
     protected void doExecute(SqlQueryRequest request, ActionListener<SqlQueryResponse> listener) {
         sqlLicenseChecker.checkIfSqlAllowed(request.mode());
+        logger.info("===doExecute===55==="+request.query());
         operation(planExecutor, request, listener);
     }
-
     /**
      * Actual implementation of the action. Statically available to support embedded mode.
      */
     public static void operation(PlanExecutor planExecutor, SqlQueryRequest request, ActionListener<SqlQueryResponse> listener) {
         // The configuration is always created however when dealing with the next page, only the timeouts are relevant
         // the rest having default values (since the query is already created)
-        Configuration cfg = new Configuration(request.timeZone(), request.fetchSize(), request.requestTimeout(), request.pageTimeout(),
-                request.filter());
+        Configuration cfg = new Configuration(request.timeZone(), request.fetchSize(), request.requestTimeout(), request.pageTimeout(), request.filter());
+
 
         if (Strings.hasText(request.cursor()) == false) {
             planExecutor.sql(cfg, request.query(), request.params(),

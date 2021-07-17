@@ -282,12 +282,12 @@ final class Bootstrap {
             final Path pidFile,
             final boolean quiet,
             final Environment initialEnv) throws BootstrapException, NodeValidationException, UserException {
-        // force the class initializer for BootstrapInfo to run before
-        // the security manager is installed
-        BootstrapInfo.init();
+        // force the class initializer for BootstrapInfo to run before the security manager is installed
 
+        BootstrapInfo.init();
         INSTANCE = new Bootstrap();
 
+        System.out.println("===Bootstrap===290===");
         final SecureSettings keystore = loadSecureSettings(initialEnv);
         final Environment environment = createEnvironment(foreground, pidFile, keystore, initialEnv.settings(), initialEnv.configFile());
         try {

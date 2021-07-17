@@ -14,9 +14,9 @@ import org.elasticsearch.xpack.sql.proto.SqlQueryResponse;
 import java.sql.SQLException;
 
 public class ServerQueryCliCommand extends AbstractServerCliCommand {
-
     @Override
     protected boolean doHandle(CliTerminal terminal, CliSession cliSession, String line) {
+
         SqlQueryResponse response = null;
         HttpClient cliClient = cliSession.getClient();
         CliFormatter cliFormatter;
@@ -27,9 +27,12 @@ public class ServerQueryCliCommand extends AbstractServerCliCommand {
             data = cliFormatter.formatWithHeader(response.columns(), response.rows());
             while (true) {
                 handleText(terminal, data);
+
                 if (response.cursor().isEmpty()) {
+                    System.out.println("===doHandle===32===");
                     // Successfully finished the entire query!
                     terminal.flush();
+                    System.out.println("===doHandle===35===");
                     return true;
                 }
                 if (false == cliSession.getFetchSeparator().equals("")) {
@@ -41,9 +44,7 @@ public class ServerQueryCliCommand extends AbstractServerCliCommand {
         } catch (SQLException e) {
             if (JreHttpUrlConnection.SQL_STATE_BAD_SERVER.equals(e.getSQLState())) {
                 terminal.error("Server error", e.getMessage());
-            } else {
-                terminal.error("Bad request", e.getMessage());
-            }
+            } else { terminal.error("Bad request", e.getMessage()); }
             if (response != null) {
                 try {
                     cliClient.queryClose(response.cursor());
@@ -54,7 +55,6 @@ public class ServerQueryCliCommand extends AbstractServerCliCommand {
         }
         return true;
     }
-
     private void handleText(CliTerminal terminal, String str) {
         terminal.print(str);
     }

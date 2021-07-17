@@ -100,12 +100,12 @@ public class SecurityServerTransportInterceptor extends AbstractComponent implem
     public AsyncSender interceptSender(AsyncSender sender) {
         return new AsyncSender() {
             @Override
-            public <T extends TransportResponse> void sendRequest(Transport.Connection connection, String action, TransportRequest request,
-                                                                  TransportRequestOptions options, TransportResponseHandler<T> handler) {
+            public <T extends TransportResponse> void sendRequest(Transport.Connection connection, String action, TransportRequest request, TransportRequestOptions options, TransportResponseHandler<T> handler) {
                 // make a local copy of isStateNotRecovered as this is a volatile variable and it
                 // is used multiple times in the method. The copy to a local variable allows us to
                 // guarantee we use the same value wherever we would check the value for the state
                 // being recovered
+
                 final boolean stateNotRecovered = isStateNotRecovered;
                 final boolean sendWithAuth = licenseState.isAuthAllowed() || stateNotRecovered;
                 if (sendWithAuth) {
@@ -136,10 +136,10 @@ public class SecurityServerTransportInterceptor extends AbstractComponent implem
                 } else {
                     sender.sendRequest(connection, action, request, options, handler);
                 }
+                logger.info("===sendRequest===139==="+connection.getNode().getAddress()+"==="+request.remoteAddress());
             }
         };
     }
-
     private <T extends TransportResponse> void sendWithUser(Transport.Connection connection, String action, TransportRequest request,
                                                             TransportRequestOptions options, TransportResponseHandler<T> handler,
                                                             AsyncSender sender, final boolean stateNotRecovered) {

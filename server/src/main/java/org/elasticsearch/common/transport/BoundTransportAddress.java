@@ -19,13 +19,13 @@
 
 package org.elasticsearch.common.transport;
 
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.io.stream.StreamInput;
 import org.elasticsearch.common.io.stream.StreamOutput;
 import org.elasticsearch.common.io.stream.Streamable;
-
+import org.elasticsearch.common.logging.Loggers;
 import java.io.IOException;
 import java.util.Arrays;
-
 /**
  * A bounded transport address is a tuple of {@link TransportAddress}, one array that represents
  * the addresses the transport is bound to, and the other is the published one that represents the address clients
@@ -34,21 +34,21 @@ import java.util.Arrays;
  *
  */
 public class BoundTransportAddress implements Streamable {
-
+    public Logger logger = Loggers.getLogger(BoundTransportAddress.class);
     private TransportAddress[] boundAddresses;
 
     private TransportAddress publishAddress;
 
     BoundTransportAddress() {
     }
-
     public BoundTransportAddress(TransportAddress[] boundAddresses, TransportAddress publishAddress) {
         if (boundAddresses == null || boundAddresses.length < 1) {
             throw new IllegalArgumentException("at least one bound address must be provided");
         }
         this.boundAddresses = boundAddresses;
         this.publishAddress = publishAddress;
-        System.out.println("===BoundTransportAddress===50==="+ Arrays.toString(boundAddresses)+"==="+publishAddress);//try { Integer.parseInt("BoundTransportAddress"); }catch (Exception e){e.printStackTrace();}
+
+        logger.info("===BoundTransportAddress===51==="+ Arrays.toString(boundAddresses)+"==="+publishAddress);//try { Integer.parseInt("BoundTransportAddress"); }catch (Exception e){logger.error("===", e);}
     }
     public TransportAddress[] boundAddresses() {
         return boundAddresses;
@@ -84,7 +84,7 @@ public class BoundTransportAddress implements Streamable {
     }
     @Override
     public String toString() {
-        System.out.println("===toString===86===");
+        System.out.println("===toString===87==="+publishAddress);
         StringBuilder builder = new StringBuilder("publish_address {");
         builder.append(publishAddress);
         builder.append("}, bound_addresses ");

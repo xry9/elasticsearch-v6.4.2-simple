@@ -70,20 +70,20 @@ public class LogConfigurator {
     private static final StatusListener ERROR_LISTENER = new StatusConsoleListener(Level.ERROR) {
         @Override
         public void log(StatusData data) {
+            //System.out.println("===log===73===");//try { Integer.parseInt("log"); }catch (Exception e){e.printStackTrace();}
             error.set(true);
             super.log(data);
         }
     };
-
     /**
      * Registers a listener for status logger errors. This listener should be registered as early as possible to ensure that no errors are
      * logged by the status logger before logging is configured.
      */
     public static void registerErrorListener() {
+        //System.out.println("===log===83===");
         error.set(false);
         StatusLogger.getLogger().registerListener(ERROR_LISTENER);
     }
-
     /**
      * Configure logging without reading a log4j2.properties file, effectively configuring the
      * status logger and all loggers to the console.
@@ -111,7 +111,7 @@ public class LogConfigurator {
         Objects.requireNonNull(environment);
         try {
             // we are about to configure logging, check that the status logger did not log any error-level messages
-            checkErrorListener();
+//            checkErrorListener();//tyx
         } finally {
             // whether or not the error listener check failed we can remove the listener now
             StatusLogger.getLogger().removeListener(ERROR_LISTENER);

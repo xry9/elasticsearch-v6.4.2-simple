@@ -38,7 +38,7 @@ public class CliRepl {
                 return;
             }
             line = line.trim();
-
+            System.out.println("===execute===41==="+line+"==="+cliCommand.getClass().getName());
             if (!line.endsWith(";")) {
                 multiLine.append(line);
                 multiLine.append(" ");

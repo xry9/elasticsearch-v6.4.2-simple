@@ -404,9 +404,9 @@ public abstract class AbstractClient extends AbstractComponent implements Client
     public final <Request extends ActionRequest, Response extends ActionResponse, RequestBuilder extends ActionRequestBuilder<Request, Response, RequestBuilder>> void execute(
             Action<Request, Response, RequestBuilder> action, Request request, ActionListener<Response> listener) {
         listener = threadedWrapper.wrap(listener);
+        logger.info("===execute===407==="+this.getClass().getName());
         doExecute(action, request, listener);
     }
-
     protected abstract <Request extends ActionRequest, Response extends ActionResponse, RequestBuilder extends ActionRequestBuilder<Request, Response, RequestBuilder>> void doExecute(Action<Request, Response, RequestBuilder> action, Request request, ActionListener<Response> listener);
 
     @Override

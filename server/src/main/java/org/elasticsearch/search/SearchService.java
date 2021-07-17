@@ -186,7 +186,7 @@ public class SearchService extends AbstractLifecycleComponent implements IndexEv
         this.queryPhase = new QueryPhase(settings);
         this.fetchPhase = fetchPhase;
         this.multiBucketConsumerService = new MultiBucketConsumerService(clusterService, settings);
-
+        logger.info("===SearchService===189===");
         TimeValue keepAliveInterval = KEEPALIVE_INTERVAL_SETTING.get(settings);
         setKeepAlives(DEFAULT_KEEPALIVE_SETTING.get(settings), MAX_KEEPALIVE_SETTING.get(settings));
 

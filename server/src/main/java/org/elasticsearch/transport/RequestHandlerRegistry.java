@@ -29,7 +29,7 @@ import java.io.IOException;
 public class RequestHandlerRegistry<Request extends TransportRequest> {
 
     private final String action;
-    private final TransportRequestHandler<Request> handler;
+    public final TransportRequestHandler<Request> handler;
     private final boolean forceExecution;
     private final boolean canTripCircuitBreaker;
     private final String executor;

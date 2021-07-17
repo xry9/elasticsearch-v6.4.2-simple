@@ -5,9 +5,11 @@
  */
 package org.elasticsearch.xpack.sql.session;
 
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.Strings;
+import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.xpack.sql.analysis.analyzer.Analyzer;
 import org.elasticsearch.xpack.sql.analysis.analyzer.PreAnalyzer;
 import org.elasticsearch.xpack.sql.analysis.analyzer.PreAnalyzer.PreAnalysis;
@@ -23,16 +25,13 @@ import org.elasticsearch.xpack.sql.plan.physical.PhysicalPlan;
 import org.elasticsearch.xpack.sql.planner.Planner;
 import org.elasticsearch.xpack.sql.proto.SqlTypedParamValue;
 import org.elasticsearch.xpack.sql.rule.RuleExecutor;
-
 import java.util.List;
 import java.util.function.Function;
 
 import static org.elasticsearch.action.ActionListener.wrap;
-
 public class SqlSession {
-
+    Logger logger = Loggers.getLogger(SqlSession.class);
     private final Client client;
-
     private final FunctionRegistry functionRegistry;
     private final IndexResolver indexResolver;
     private final PreAnalyzer preAnalyzer;
@@ -127,8 +126,8 @@ public class SqlSession {
                 listener.onFailure(new MappingException("Cannot inspect indices in cluster/catalog [{}]", cluster));
             }
 
-            indexResolver.resolveWithSameMapping(table.index(), null,
-                    wrap(indexResult -> listener.onResponse(action.apply(indexResult)), listener::onFailure));
+            indexResolver.resolveWithSameMapping(table.index(), null, wrap(indexResult -> listener.onResponse(action.apply(indexResult)), listener::onFailure));
+
         } else {
             try {
                 // occurs when dealing with local relations (SELECT 5+2)
@@ -150,9 +149,9 @@ public class SqlSession {
     public void sql(String sql, List<SqlTypedParamValue> params, ActionListener<SchemaRowSet> listener) {
         sqlExecutable(sql, params, wrap(e -> e.execute(this, listener), listener::onFailure));
     }
-
     public void sqlExecutable(String sql, List<SqlTypedParamValue> params, ActionListener<PhysicalPlan> listener) {
         try {
+            logger.info("===sqlExecutable===154==="+sql);
             physicalPlan(doParse(sql, params), true, listener);
         } catch (Exception ex) {
             listener.onFailure(ex);
