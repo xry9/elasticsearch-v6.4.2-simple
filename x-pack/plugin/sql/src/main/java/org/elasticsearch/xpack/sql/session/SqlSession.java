@@ -81,10 +81,10 @@ public class SqlSession {
     public Optimizer optimizer() {
         return optimizer;
     }
-
     private LogicalPlan doParse(String sql, List<SqlTypedParamValue> params) {
         return new SqlParser().createStatement(sql, params);
     }
+
 
     public void analyzedPlan(LogicalPlan parsed, boolean verify, ActionListener<LogicalPlan> listener) {
         if (parsed.analyzed()) {
